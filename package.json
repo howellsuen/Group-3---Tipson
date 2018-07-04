@@ -1,0 +1,30 @@
+{
+  "name": "group-3---tipson",
+  "version": "1.0.0",
+  "description": "Football Premiere League Prediction App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/howellsuen/Group-3---Tipson.git"
+  },
+  "keywords": [
+    "Football",
+    "Soccer",
+    "Prediction",
+    "Winning",
+    "Win",
+    "Draw"
+  ],
+  "author": "Perry Chan, Howell Suen, Jonathan Paita",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/howellsuen/Group-3---Tipson/issues"
+  },
+  "homepage": "https://github.com/howellsuen/Group-3---Tipson#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
