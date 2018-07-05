@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/howellsuen/Group-3---Tipson#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "express-static": "^1.2.5"
   }
 }
