@@ -22,10 +22,11 @@
   "author": "Perr Chan, Howell Suen, Jonathan Paita",
   "license": "ISC",
   "bugs": {
-    "url":"https://github.com/howellsuen/Group-3---Tipson/issues"
+    "url": "https://github.com/howellsuen/Group-3---Tipson/issues"
   },
   "homepage": "https://github.com/howellsuen/Group-3---Tipson#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.1.0",
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
