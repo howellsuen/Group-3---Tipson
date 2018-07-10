@@ -26,20 +26,12 @@
   },
   "homepage": "https://github.com/howellsuen/Group-3---Tipson#readme",
   "dependencies": {
-<<<<<<< HEAD
     "@fortawesome/fontawesome-free": "^5.1.0",
-=======
-<<<<<<< HEAD
->>>>>>> 1b65406cc71a021118e6dda15d89fbd09f34729a
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "jade": "^1.11.0",
     "nodemailer": "^4.6.7",
     "path": "^0.12.7"
-=======
-    "express": "^4.16.3",
-    "express-static": "^1.2.5"
->>>>>>> feb6cb139d032f998fa915f3706b562a0cbd7acd
   }
 }
