@@ -97,6 +97,10 @@ body {
   font-weight: 700;
 }
 
+#cover-head {
+   font-family: 'Berkshire Swash', cursive;
+   font-size: 100px;
+}
 
 /*
  * Footer
