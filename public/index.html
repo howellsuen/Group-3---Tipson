@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--some meta-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+
+    <!--title & SEO-->
+    <title>Soccer App</title>
+
+    <!--link-->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header-title">Soccer APP</h1>
+        <button id="topBtn">My info</button>
+    </header>
+    <main>
+        <h2 id="welcome">Welcome Uncle</h2>
+    </main>
+    <script src="app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyANDuRo67gaycF5DXX0j0KfrDVfr0bZO4k",
+            authDomain: "soccer-app-d3e8b.firebaseapp.com",
+            databaseURL: "https://soccer-app-d3e8b.firebaseio.com",
+            projectId: "soccer-app-d3e8b",
+            storageBucket: "",
+            messagingSenderId: "397400428291"
+        };
+        firebase.initializeApp(config);
+    </script>
+</body>
+
+</html>
