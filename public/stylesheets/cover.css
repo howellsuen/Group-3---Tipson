@@ -228,3 +228,96 @@ body {
 /*=========================================
          About section style ends
 =========================================*/
+
+
+/*=========================================
+         Ranking table style begins
+=========================================*/
+
+.tbl-hdr {
+  background-color: yellow;
+  font-size: 20px;
+  color: black;
+}
+
+.bold-text {
+  font-weight: bold;
+  color: black;
+}
+
+.nowrap-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.scooter-text {
+  color: orangered;
+  font-size: 30px;
+}
+
+.avatar-radius-60 {
+  border-radius: 30px;
+}
+
+.tipson-table  {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: whitesmoke;
+  border-collapse: seperate;
+  border: 3px solid black;
+}
+
+th {
+  border: 3px solid black;
+}
+
+td {
+  border: 1px solid black;
+}
+
+/** td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+
+.text-center {
+  text-align: center;
+} **/
+
+img {
+  color: blue;
+}
+
+.tbl-title {
+  color: black;
+}
+
+/*=========================================
+         Ranking table style ends
+=========================================*/
+
+/*=========================================
+         Match card table style begins
+=========================================*/
+
+.pd-home {
+  color: red;
+  background-color: blue;
+}
+
+.btn {
+  width: 100px;
+  border: 1px solid;
+}
+
+
+
+
+
+
+.btn-main{ border-radius: 50%; width:32px; height:32px; line-height:18px;  }
