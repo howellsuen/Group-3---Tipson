@@ -20,8 +20,20 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-app.get('/contact', (req, res) => {
-    res.render('contact');
+app.get('/home', (req, res) => {
+    res.render('home');
+});
+
+app.get('/ranking', (req, res) => {
+    res.render('ranking');
+});
+
+app.get('/search', (req, res) => {
+    res.render('search');
+});
+
+app.get('/profile', (req, res) => {
+    res.render('profile');
 });
 
 
