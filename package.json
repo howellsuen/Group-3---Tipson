@@ -1,40 +1,40 @@
 {
-  "name": "tipson-football-app",
-  "version": "1.0.0",
-  "description": "football premiere leugue prediction app",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/howellsuen/Group-3---Tipson.git"
-  },
-  "keywords": [
-    "Football",
-    "Soccer",
-    "Tips",
-    "Prediction",
-    "Winning",
-    "Draw"
-  ],
-  "author": "Perr Chan, Howell Suen, Jonathan Paita",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/howellsuen/Group-3---Tipson/issues"
-  },
-  "homepage": "https://github.com/howellsuen/Group-3---Tipson#readme",
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.1.0",
-    "body-parser": "^1.18.3",
-    "dotenv": "^6.0.0",
-    "ejs": "^2.6.1",
-    "express": "^4.16.3",
-    "jade": "^1.11.0",
-    "knex": "^0.15.0",
-    "nodemailer": "^4.6.7",
-    "path": "^0.12.7",
-    "pg": "^7.4.3"
-  }
+    "name": "tipson-football-app",
+    "version": "1.0.0",
+    "description": "football premiere leugue prediction app",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node app"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/howellsuen/Group-3---Tipson.git"
+    },
+    "keywords": [
+        "Football",
+        "Soccer",
+        "Tips",
+        "Prediction",
+        "Winning",
+        "Draw"
+    ],
+    "author": "Perr Chan, Howell Suen, Jonathan Paita",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/howellsuen/Group-3---Tipson/issues"
+    },
+    "homepage": "https://github.com/howellsuen/Group-3---Tipson#readme",
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.1.0",
+        "body-parser": "^1.18.3",
+        "dotenv": "^6.0.0",
+        "ejs": "^2.6.1",
+        "express": "^4.16.3",
+        "jade": "^1.11.0",
+        "knex": "^0.15.0",
+        "nodemailer": "^4.6.7",
+        "path": "^0.12.7",
+        "pg": "^7.4.3"
+    }
 }
