@@ -1,0 +1,8 @@
+// add this file to .gitignore
+
+module.exports = {
+        facebook: {
+            clientID: '650079822039111',
+            clientSecret: 'ca25a51c9a7d98737c3f2fde6dc7476d'
+        }
+};
