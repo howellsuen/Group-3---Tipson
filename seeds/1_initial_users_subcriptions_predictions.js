@@ -18,8 +18,8 @@ exports.seed = function(knex, Promise) {
                     payment_id: '',
                     profile_picture: '',
                     description: 'Have faith!',
-                    total_tips: '3',
-                    total_wins: '2'
+                    total_tips: '1',
+                    total_wins: '1'
                 },
                 {
                     id: 2,
@@ -30,8 +30,8 @@ exports.seed = function(knex, Promise) {
                     payment_id: '',
                     profile_picture: '',
                     description: 'Have faith!',
-                    total_tips: '4',
-                    total_wins: '3'
+                    total_tips: '1',
+                    total_wins: '0'
                 },
                 {
                     id: 3,
@@ -42,8 +42,8 @@ exports.seed = function(knex, Promise) {
                     payment_id: '',
                     profile_picture: '',
                     description: 'Have faith!',
-                    total_tips: '2',
-                    total_wins: '1'
+                    total_tips: '0',
+                    total_wins: '0'
                 }
             ]);
         })
