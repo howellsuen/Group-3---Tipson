@@ -1,43 +1,29 @@
+// General Initialization
+require('dotenv').config();
+const NODE_ENV = process.env.NODE_ENV || 'development' 
 
-'strict';
+// Dependency Injection for Routers and Service
+const ViewRouter = require('./ViewRouter');
 
-const express = require('express'); // http framework module
-const path = require('path'); // root module
-const bodyParser = require('body-parser'); // pull information from html in POST
-const nodeMailer = require('nodemailer');
+const { GroupRouter,
+        UserRouter} = require('./routers');
 
-const app = express();
+const { GroupService,
+        UserService} = require('./services');
 
-app.set('views', path.join(__dirname, 'views'));
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
+const JsonFile = require('./stores/JsonFile');
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(express.static(path.join(__dirname, 'public')));
+let groupService = new GroupService(new JsonFile('groups.json'));
+let userService = new UserService(new JsonFile('users.json'));
 
-app.get('/', (req, res) => {
-    res.render('index');
+const {app} = require('./utils/init-app')();
+
+
+app.use('/',new ViewRouter().router());
+app.use('/api/groups',new GroupRouter(groupService).router());
+app.use('/api/users',new UserRouter(userService).router());
+
+
+app.listen(3000,()=>{
+    console.log("Application started at port:3000");
 });
-
-app.get('/home', (req, res) => {
-    res.render('home');
-});
-
-app.get('/ranking', (req, res) => {
-    res.render('ranking');
-});
-
-app.get('/search', (req, res) => {
-    res.render('search');
-});
-
-app.get('/profile', (req, res) => {
-    res.render('profile');
-});
-
-
-
-
-app.listen(3000);
-console.log('server is runnin on port 3000...');
