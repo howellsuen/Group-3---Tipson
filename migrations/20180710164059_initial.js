@@ -2,8 +2,8 @@ exports.up = function(knex, Promise) {
     return knex.schema.createTable('users', (table) => {
         table.increments();
         table.string("name");
-        table.string("email");
-        table.string("password");
+        table.string("facebookId");
+        table.string("accessToken");
         table.boolean("paid");
         table.string("payment_id");
         table.string("profile_picture");
@@ -64,7 +64,7 @@ exports.up = function(knex, Promise) {
 
             table.enu("result", ['home', 'draw', 'away'], {
                 useNative: true,
-                enumName: 'result_type'
+                enumName: 'result_types'
             });
             table.timestamps(false, true);
         });
@@ -82,7 +82,7 @@ exports.up = function(knex, Promise) {
 
             table.enu("user_choice", ['home', 'draw', 'away'], {
                 useNative: true,
-                enumName: 'choice_type'
+                enumName: 'choice_types'
             });
             table.timestamps(false, true);
         });

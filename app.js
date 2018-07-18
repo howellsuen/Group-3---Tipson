@@ -1,6 +1,7 @@
 const express = require('express');
-const authRoutes = require('./routers/auth-routes');
-const passportSetup = require('./config/passport-setup');
+const authRouter = require('./routers/authRouter');
+const setupPassport = require('./utils/passport');
+
 
 // General Initialization
 require('dotenv').config();
@@ -28,7 +29,9 @@ const {
     app
 } = require('./utils/init-app')();
 
-app.use('/auth', authRoutes);
+setupPassport(app);
+
+app.use('/auth', authRouter);
 app.use('/', new ViewRouter().router());
 app.use('/api/groups', new GroupRouter(groupService).router());
 app.use('/api/users', new UserRouter(userService).router());
@@ -36,9 +39,11 @@ app.use('/api/users', new UserRouter(userService).router());
 //https setting
 const https = require('https');
 const fs = require('fs');
-const options = {
+const httpsOptions = {
     cert: fs.readFileSync('./localhost.crt'),
     key: fs.readFileSync('./localhost.key')
 };
 
-https.createServer(options, app).listen(3000);
+https.createServer(httpsOptions, app).listen(3000, () => {
+    console.log('server running at ' + 3000)
+});

@@ -12,8 +12,8 @@ exports.seed = function(knex, Promise) {
             return knex('users').insert([{
                     id: 1,
                     name: 'Howell',
-                    email: 'howell.suen@gmail.com',
-                    password: 'howell1234',
+                    facebookId: '',
+                    accessToken: '',
                     paid: 'false',
                     payment_id: '',
                     profile_picture: '',
@@ -24,8 +24,8 @@ exports.seed = function(knex, Promise) {
                 {
                     id: 2,
                     name: 'Perry',
-                    email: 'perry@gmail.com',
-                    password: 'perry1234',
+                    facebookId: '',
+                    accessToken: '',
                     paid: 'false',
                     payment_id: '',
                     profile_picture: '',
@@ -36,8 +36,8 @@ exports.seed = function(knex, Promise) {
                 {
                     id: 3,
                     name: 'Jonathan',
-                    email: 'jonathan@gmail.com',
-                    password: 'jonathan1234',
+                    facebookId: '',
+                    accessToken: '',
                     paid: 'false',
                     payment_id: '',
                     profile_picture: '',
