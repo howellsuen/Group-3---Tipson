@@ -22,17 +22,17 @@ const {
     UserService
 } = require('./services');
 
-const JsonFile = require('./stores/JsonFile');
+// const JsonFile = require('./stores/JsonFile');
 
-let groupService = new GroupService(new JsonFile('groups.json'));
-let userService = new UserService(new JsonFile('users.json'));
+// let groupService = new GroupService(new JsonFile('groups.json'));
+let userService = new UserService(knex);
 
 const { app } = require('./utils/init-app')();
 
 setupPassport(app, knex);
 
 app.use('/', new ViewRouter().router());
-app.use('/api/groups', new GroupRouter(groupService).router());
+// app.use('/api/groups', new GroupRouter(groupService).router());
 app.use('/api/users', new UserRouter(userService).router());
 
 //https setting

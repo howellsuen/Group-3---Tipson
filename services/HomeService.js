@@ -1,25 +1,14 @@
-const USERS = require("./tables").USERS;
+const MATCHES = require("./tables").MATCHES;
 
-module.exports = class UserService {
+module.exports = class HomeService {
 
     constructor(knex) {
         this.knex = knex;
     }
 
-    create(user) {
-        // Validation logic
-        return this.knex.insert(user).into(USERS).returning("id");
-    }
-
-
-    delete(userId) {
-        return this.knex(USERS).where("id", userId).del();
-    }
-
-
     list(limit = 100, offset = 0) {
         return this.knex.select("*")
-            .from(USERS)
+            .from(MATCHES)
             .limit(limit).offset(offset);
     }
 
