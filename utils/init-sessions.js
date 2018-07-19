@@ -1,15 +1,17 @@
 const expressSession = require('express-session');
-const cookieSession = require('cookie-session');
 
 module.exports = (app) => {
     const settings = {
         secret: "supersecret",
+        resave: true,
+        saveUninitialized: true,
         cookie: {
             "path": '/',
             "httpOnly": true,
-            "secure": false,
+            "secure": true,
             "maxAge": 24 * 60 * 60 * 1000 // 24 hours
         }
     }
+    app.set('trust proxy', 1) // trust first proxy
     app.use(expressSession(settings));
 }

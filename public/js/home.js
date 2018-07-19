@@ -1,10 +1,10 @@
 $(() => {
     $.get('/api/home').then((data) => {
         data.forEach(e => {
-            $('#match-table').append(Match(e.first_name, e.last_name, e.email));
+            $('#match-table').append(Match(e.matchday, e.last_name, e.email));
         });
     });
-    const User = (firstName, lastName, email) => {
+    const Match = (firstName, lastName, email) => {
         return `
         <div class="row-fluid">
             <div class="span12 tbl-cont">
