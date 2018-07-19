@@ -1,12 +1,7 @@
-require('dotenv').config();
-const NODE_ENV = process.env.NODE_ENV || 'development'
-
 const passport = require('passport');
 const FacebookStrategy = require('passport-facebook').Strategy;
-const knexFile = require('../knexfile')[NODE_ENV]
-const knex = require('knex')(knexFile)
 
-module.exports = (app) => {
+module.exports = (app, knex) => {
     app.use(passport.initialize());
     app.use(passport.session());
     passport.use('facebook', new FacebookStrategy({
@@ -32,19 +27,19 @@ module.exports = (app) => {
             return done(err);
         }
     }));
-}
 
-passport.serializeUser((user, done) => {
-    done(null, user.id);
-});
-
-passport.deserializeUser(async(id, done) => {
-    let users = await knex('users').where({
-        id: id
+    passport.serializeUser((user, done) => {
+        done(null, user.id);
     });
-    if (users.length == 0) {
-        return done(new Error(`Wrong user id ${id}`));
-    }
-    let user = users[0];
-    return done(null, user);
-});
+
+    passport.deserializeUser(async(id, done) => {
+        let users = await knex('users').where({
+            id: id
+        });
+        if (users.length == 0) {
+            return done(new Error(`Wrong user id ${id}`));
+        }
+        let user = users[0];
+        return done(null, user);
+    });
+};

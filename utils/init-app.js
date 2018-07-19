@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const hb = require('express-handlebars');
 
 
-module.exports = ()=>{
+module.exports = () => {
     let app = express();
     app.engine('handlebars', hb({ defaultLayout: 'main' }));
     app.set('view engine', 'handlebars');
@@ -12,7 +12,7 @@ module.exports = ()=>{
 
     require('./init-sessions')(app);
 
-    return{
-        app : app
+    return {
+        app: app
     }
 }
