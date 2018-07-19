@@ -1,0 +1,67 @@
+.best-tipster{
+    margin-right: 1.2em;  
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.ranking-title{
+    background: #FFC82C;
+    width: 14em;
+}
+
+.ranking-title > h3{
+    padding-right: 4.5em;
+    padding-top: 0.1em;
+}
+
+.ranking-title > a{
+    padding-right: 0.5em;
+}
+
+.best-tipster > ul{
+    list-style-type: none;
+}
+
+.ranking-content{
+    background: #FFF;
+    color: #47525E;
+}
+
+.ranking-pic{
+    max-width: 1.5em;
+    height: auto;
+    margin-left: 0.4em;
+}
+
+.ranking-name{
+    font-size: 0.7em;
+    padding-top: 0.2em;
+}
+
+.ranking-rate{
+    font-size: 0.7em;
+    padding-top: 0.2em;
+    margin-right: 0.4em;
+}
+
+.worst-tipster{
+    margin-right: 1.2em;  
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+/*best and worst page*/
+
+.best-worst-title{
+    background: #FFC82C;
+    width: 14em;
+}
+
+.best-worst-title > h3{
+    padding-left: 4.5em;
+    padding-top: 0.1em;
+}
+
+.best-worst-title > a{
+    padding-left: 0.5em;
+}
