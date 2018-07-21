@@ -4,10 +4,12 @@ $(() => {
         data.forEach(e => {
             $('#match-table').append(Match(e.homeTeam, e.awayTeam));
         });
-    });
+    }).then(() => $(".home-prediction > .prediction-btn").click(function() { // add yellow color to buttons when being clicked
+        $(".home-prediction > .prediction-btn").removeClass("btn-warning");
+        $(this).addClass("btn-warning");
+    }));
     const Match = (homeTeam, awayTeam) => {
         return `
-        <script type="text/javascript" src="/js/animation.js"></script>
         <div class="btn-group d-flex justify-content-center home-prediction" role="button" aria-label="prediction">
             <button type="button" id="home-btn" class="btn btn-secondary prediction-btn">
                 <img src="/images/team-hud.svg" alt="" class="badgeContainer">
