@@ -9,7 +9,7 @@ module.exports = (app) => {
             "path": '/',
             "httpOnly": true,
             "secure": true,
-            "maxAge": 24 * 60 * 60 * 1000 // 24 hours
+            "maxAge": 7 * 24 * 60 * 60 * 1000 // 7 days
         }
     }
     app.set('trust proxy', 1) // trust first proxy

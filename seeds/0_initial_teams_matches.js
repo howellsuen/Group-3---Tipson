@@ -15,13 +15,13 @@ exports.seed = function(knex, Promise) {
             return knex('leagues').insert([{
                     id: 1,
                     country: 'England',
-                    name: 'English Premier League',
+                    name: '英超', //English Premier League
                     badge: ''
                 },
                 {
                     id: 2,
                     country: 'Spain',
-                    name: 'La Liga',
+                    name: '西甲', //La Liga
                     badge: ''
                 }
             ]);
@@ -30,25 +30,25 @@ exports.seed = function(knex, Promise) {
             return knex('teams').insert([{
                     id: 1,
                     league_id: 1,
-                    name: 'Arsenal',
+                    name: '阿仙奴', //Arsenal
                     badge: ''
                 },
                 {
                     id: 2,
                     league_id: 1,
-                    name: 'Huddersfield Town',
+                    name: '哈德斯菲爾德', //Huddersfield Town
                     badge: ''
                 },
                 {
                     id: 3,
                     league_id: 2,
-                    name: 'FC Barcelona',
+                    name: '巴塞隆拿', //FC Barcelona
                     badge: ''
                 },
                 {
                     id: 4,
                     league_id: 2,
-                    name: 'Real Madrid',
+                    name: '皇家馬德里', //Real Madrid
                     badge: ''
                 }
             ]);

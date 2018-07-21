@@ -3,7 +3,7 @@ const passport = require('passport');
 const isLoggedIn = require('./utils/guard').isLoggedIn;
 
 module.exports = class ViewRouter {
-    // remember to put back is isLoggedIn,
+    // remember to put back isLoggedIn,
     router() {
         const router = express.Router();
         router.get('/', (req, res) => res.render("index3"));

@@ -1,6 +1,17 @@
+ <!--Get rid of the Facebook residue hash in the return URI-->
+<script type="text/javascript">
+    $(window).on('load', function (e) {
+        if (window.location.hash == '#_=_') {
+            window.location.hash = ''; // for older browsers, leaves a # behind
+            history.pushState('', document.title, window.location.pathname); // nice and clean
+            e.preventDefault(); // no page reload
+        }
+    })
+</script>
+
 <script type='text/javascript' src="/js/home.js"></script>
 
-<body>
+<div>
     <header class="d-flex justify-content-center home-header">
         <h2 id="home-title">你的預測</h2>
         <div id="home-date"></div>
@@ -12,4 +23,4 @@
     </div>
 <!-- MATCH TABLES ENDS -->
     {{> footer }}
-</body>
+</div>
