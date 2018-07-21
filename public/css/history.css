@@ -1,0 +1,37 @@
+.history-header {
+    text-align: center;
+    margin-top: 2em;
+}
+
+#history-soon {
+    font-size: 1.2em;
+}
+
+.history-back {
+    background: #FFC82C;
+}
+
+.history-back>h3 {
+    padding-left: 0.5em;
+    padding-top: 0.8em;
+    font-size: 0.5em;
+}
+
+.history-back>a {
+    padding-left: 0.4em;
+}
+
+.his-table-title {
+    background: #FFC82C;
+    font-size: 0.5em;
+
+}
+
+.his-table-body {
+    background: #FFF;
+    color: #47525E;
+}
+
+.his-table-body > tr > th ,td {
+    font-size: 0.5em;
+}

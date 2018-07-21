@@ -1,4 +1,113 @@
-.about-user{
+.profile-header{
+    text-align: center;
+    margin-top: 2em;
+    font-size: 1.2em;
+}
+
+.about-user {
+    text-align: center;
+    margin-top: -2.5em;
+}
+
+#user-pic{
+    max-width: 100%;
+    height: auto;
+    height: 100px;
+    margin-top: 100px;
+    z-index: 1;
+}
+
+.about-info{
+    background-color: #FFC82C;
+    min-width: 330px;
+    max-width: 400px;
+    margin-top: -1.5em;
+}
+
+.user-name{
+    padding-top: 1.6em;
+}
+
+.user-intro{
+    font-size: 0.8em;
+    padding:0 1em;
+}
+
+.profile-record {
+    margin: 2em 0;
+    text-align: center;
+}
+
+#record-prediction {
+    background: #00A6FF;
+}
+
+#record-win {
+    background: #77D353;
+}
+
+#record-rate {
+    background: #F95F62;
+}
+
+.record-div{
+    width: 100px;
+    height: 100px;
+}
+
+.record-div > h2{
+    padding: 0.4em 0.2em;
+    font-size: 0.7em;
+}
+
+.recent {
+    background-color: #555;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+}
+
+.profile-history{
+    margin-right: 1.2em;  
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.profile-history ul{
+    list-style:none;
+}
+
+.history-title{
     background: #FFC82C;
-    width: 14em;
+    min-width: 300px;
+}
+
+.history-title > h3{
+    padding-right: 2.5em;
+    padding-top: 0.1em;
+}
+
+.history-title > a{
+    padding-right: 0.5em;
+}
+
+.history-content{
+    background: #FFF;
+    color: #47525E;
+}
+
+.history-content > h3{
+    font-size: 0.7em;
+    margin-top: 0.3em
+}
+
+.history-content > p{
+    font-size: 0.5em;
+    margin-top: 0.7em
+}
+
+#history-content-preview{
+    background: #FFF;
+    padding: 0 0.2em 0.5em 0.2em;
+    margin-bottom: 1.5em;
 }
