@@ -1,67 +1,26 @@
 $(() => {
     $.get('/api/home').then((data) => {
+        $('#home-date').append(`<p>${data[0].matchDay}</p>`)
         data.forEach(e => {
-            $('#match-table').append(Match(e.matchDay, e.homeTeam, e.awayTeam));
+            $('#match-table').append(Match(e.homeTeam, e.awayTeam));
         });
     });
-    const Match = (matchDay, homeTeam, awayTeam) => {
+    const Match = (homeTeam, awayTeam) => {
         return `
-        <div class="row-fluid">
-            <div class="span12 tbl-cont">
-                <div class="padding-lr20 table-responsive">
-                    <table width="100%" id="ranking-content-table" class="tipson-table" cellpadding="0" cellspacing="0">
-                        <thead class="#">
-                            <tr>
-                                <th class="pd-home" colspan="3">FIXTURE ${matchDay}</th>
-                            </tr>
-                        </thead>
-                        <tbody class="tbl-hdr">
-                            <tr>
-                                <td>
-                                    <img src="/images/team-mun.svg" alt="" class="badgeContainer">
-                                </td>
-                                <td>
-                                    <div class="title-text bold-text text-center w70 nowrap-text"></div>
-                                </td>
-                                <td>
-                                    <img src="/images/team-lei.svg" alt="" class="badgeContainer">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="title-text bold-text text-center w70 nowrap-text">${homeTeam}</div>
-                                </td>
-                                <td>
-                                    <div class="title-text bold-text text-center w70 nowrap-text">vs.</div>
-                                </td>
-                                <td>
-                                    <div class="title-text bold-text text-center w70 nowrap-text">${awayTeam}</div>
-                                </td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-
-                            <tr>
-                                <td>
-                                    <button type="button" class="btn btn-primary">HOME</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-warning">DRAW</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-success">AWAY</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="3">
-                                    <button type="button" class="btn btn-success btn-md">提交</button>
-                                </td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-            </div>
-        </div>
+        <section class="btn-group d-flex justify-content-center home-prediction" role="button" aria-label="prediction">
+            <button type="button" class="btn btn-secondary prediction-btn">
+                <img src="/images/team-hud.svg" alt="" class="badgeContainer">
+                <p>${homeTeam}</p>
+            </button>
+            <button type="button" class="btn btn-secondary prediction-btn">
+                <h3>和</h3>
+            </button>
+            <button type="button" class="btn btn-secondary prediction-btn">
+                <img src="/images/team-ars.svg" alt="" class="badgeContainer">
+                <p>${awayTeam}</p>
+            </button>
+            <button class="btn btn-success" id="submit-btn" type="submit">提交</button>
+        </section>
         `
     };
 });

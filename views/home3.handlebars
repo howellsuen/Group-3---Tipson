@@ -1,9 +1,15 @@
+<script type='text/javascript' src="/js/home.js"></script>
+
 <body>
     <header class="d-flex justify-content-center home-header">
         <h2 id="home-title">你的預測</h2>
-        <p id="home-date">{{{date}}}</p>
+        <div id="home-date"></div>
     </header>
-    {{> home-prediction }}
-    {{> home-prediction }}
+<!-- MATCH TABLES START -->
+    <div>
+        <div id="match-table">
+        </div>
+    </div>
+<!-- MATCH TABLES ENDS -->
     {{> footer }}
 </body>

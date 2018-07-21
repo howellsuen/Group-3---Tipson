@@ -22,8 +22,6 @@ const {
     HomeService
 } = require('./services');
 
-// const JsonFile = require('./stores/JsonFile');
-
 // let groupService = new GroupService(new JsonFile('groups.json'));
 let homeService = new HomeService(knex);
 
