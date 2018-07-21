@@ -1,11 +1,39 @@
-body{
+body {
     background-color: #1E76AE;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Lato', 'Open Sans', sans-serif;
     font-size: 30px;
+    color: #FFF;
 }
 
-h1{
+#landing-main {
+    margin-top: 2em;
+    text-align: center;
+}
+
+#landing-h1 {
     font-family: 'Berkshire Swash', cursive;
-    color: #FFF;
     font-size: 3em;
+}
+
+#landing-h2 {
+    font-size: 2em;
+}
+
+#landing-h3 {
+    font-size: 0.8em;
+    margin-top: 2em;
+}
+
+#fb-login {
+    margin-top: 3em;
+}
+
+.trademark {
+    font-size: 0.4em;
+    margin-top: 6em;
+}
+
+.footer-btn>a {
+    padding: 0 2em 0 2em;
+    background: #FFF;
 }

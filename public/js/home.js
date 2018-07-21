@@ -1,10 +1,10 @@
 $(() => {
     $.get('/api/home').then((data) => {
         data.forEach(e => {
-            $('#match-table').append(Match(e.matchday, e.last_name, e.email));
+            $('#match-table').append(Match(e.matchDay, e.homeTeam, e.awayTeam));
         });
     });
-    const Match = (firstName, lastName, email) => {
+    const Match = (matchDay, homeTeam, awayTeam) => {
         return `
         <div class="row-fluid">
             <div class="span12 tbl-cont">
@@ -12,7 +12,7 @@ $(() => {
                     <table width="100%" id="ranking-content-table" class="tipson-table" cellpadding="0" cellspacing="0">
                         <thead class="#">
                             <tr>
-                                <th class="pd-home" colspan="3">FIXTURE ${matchNum}</th>
+                                <th class="pd-home" colspan="3">FIXTURE ${matchDay}</th>
                             </tr>
                         </thead>
                         <tbody class="tbl-hdr">

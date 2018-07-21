@@ -18,7 +18,7 @@ module.exports = (app, knex) => {
                     name: profile.displayName,
                     facebookId: profile.id,
                     accessToken: accessToken,
-                    profile_picture: picture
+                    profile_picture: profile.picture
                 })
                 return done(null, user)
             } else {

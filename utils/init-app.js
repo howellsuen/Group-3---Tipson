@@ -12,7 +12,5 @@ module.exports = () => {
 
     require('./init-sessions')(app);
 
-    return {
-        app: app
-    }
+    return app;
 }

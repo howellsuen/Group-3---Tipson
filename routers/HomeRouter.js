@@ -17,7 +17,7 @@ module.exports = class HomeRouter {
     }
 
     get(req, res) {
-        return this.userService.list()
+        return this.homeService.list()
             .then((data) => res.json(data))
             .catch((err) => res.status(500).json(err));
     }

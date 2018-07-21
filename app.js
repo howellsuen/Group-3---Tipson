@@ -14,26 +14,26 @@ const ViewRouter = require('./ViewRouter');
 
 const {
     GroupRouter,
-    UserRouter
+    HomeRouter
 } = require('./routers');
 
 const {
     GroupService,
-    UserService
+    HomeService
 } = require('./services');
 
 // const JsonFile = require('./stores/JsonFile');
 
 // let groupService = new GroupService(new JsonFile('groups.json'));
-let userService = new UserService(knex);
+let homeService = new HomeService(knex);
 
-const { app } = require('./utils/init-app')();
+const app = require('./utils/init-app')();
 
 setupPassport(app, knex);
 
 app.use('/', new ViewRouter().router());
 // app.use('/api/groups', new GroupRouter(groupService).router());
-app.use('/api/users', new UserRouter(userService).router());
+app.use('/api/home', new HomeRouter(homeService).router());
 
 //https setting
 const https = require('https');
