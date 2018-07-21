@@ -6,20 +6,15 @@
 
 .ranking-title{
     background: #FFC82C;
-    width: 14em;
 }
 
 .ranking-title > h3{
-    padding-right: 4.5em;
+    padding-right: 2em;
     padding-top: 0.1em;
 }
 
 .ranking-title > a{
     padding-right: 0.5em;
-}
-
-.best-tipster > ul{
-    list-style-type: none;
 }
 
 .ranking-content{
@@ -34,12 +29,14 @@
 }
 
 .ranking-name{
-    font-size: 0.7em;
-    padding-top: 0.2em;
+    font-size: 0.6em;
+    padding: 0.2em 0.3em 0 0.3em;
+    width:12em;
+    text-align: center;
 }
 
 .ranking-rate{
-    font-size: 0.7em;
+    font-size: 0.5em;
     padding-top: 0.2em;
     margin-right: 0.4em;
 }
@@ -47,18 +44,18 @@
 .worst-tipster{
     margin-right: 1.2em;  
     margin-top: 1em;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
+
 
 /*best and worst page*/
 
 .best-worst-title{
     background: #FFC82C;
-    width: 14em;
 }
 
 .best-worst-title > h3{
-    padding-left: 4.5em;
+    padding-left: 2.5em;
     padding-top: 0.1em;
 }
 
