@@ -49,8 +49,6 @@ exports.seed = function(knex, Promise) {
                     id: 4,
                     league_id: 2,
                     name: '皇家馬德里', //Real Madrid
-<<<<<<< HEAD
-=======
                     badge: ''
                 },
                 {
@@ -63,7 +61,6 @@ exports.seed = function(knex, Promise) {
                     id: 6,
                     league_id: 1,
                     name: 'Burnley FC',
->>>>>>> c0228a26f4adb48e71b6f200d821f40ea1b5adb5
                     badge: ''
                 }
             ]);
