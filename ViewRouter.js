@@ -7,7 +7,7 @@ module.exports = class ViewRouter {
     router() {
         const router = express.Router();
         router.get('/', (req, res) => res.render("index3"));
-        router.get('/home', (req, res) => res.render("home3"));
+        router.get('/home', isLoggedIn, (req, res) => res.render("home3"));
         router.get('/ranking', (req, res) => res.render("ranking3"));
         router.get('/search', (req, res) => res.render("search3"));
         router.get('/profile', (req, res) => res.render("profile3"));

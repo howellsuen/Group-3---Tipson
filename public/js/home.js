@@ -4,9 +4,9 @@ $(() => {
         data.forEach(e => {
             $('#match-table').append(Match(e.homeTeam, e.awayTeam));
         });
-    }).then(() => $(".home-prediction > .prediction-btn").click(function() { // add yellow color to buttons when being clicked
-        $(".home-prediction > .prediction-btn").removeClass("btn-warning");
-        $(this).addClass("btn-warning");
+    }).then(() => $('.home-prediction > .prediction-btn').click(function() { // add yellow color to buttons when being clicked
+        $('.home-prediction > .prediction-btn').removeClass('btn-warning');
+        $(this).addClass('btn-warning');
     }));
     const Match = (homeTeam, awayTeam) => {
         return `
@@ -26,4 +26,33 @@ $(() => {
         </div>
         `
     };
+
+    const userInput = [];
+
+    $('#home-btn').click(() => {
+        userInput.push({
+            user_choice: home
+        })
+    })
+
+    $('#draw-btn').click(() => {
+        userInput.push({
+            user_choice: draw
+        })
+    })
+
+    $('#away-btn').click(() => {
+        userInput.push({
+            user_choice: away
+        })
+    })
+
+    $('#submit-btn').click(() => {
+
+        $.post('/api/home/submit', {
+
+        }).done((data) => {
+            $('#submit-btn').toggle();
+        });
+    });
 });

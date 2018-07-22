@@ -5,3 +5,5 @@ module.exports.USERS = "users";
 module.exports.MATCHES = "matches";
 
 module.exports.TEAMS = "teams";
+
+module.exports.PREDICTIONS = "predictions";
