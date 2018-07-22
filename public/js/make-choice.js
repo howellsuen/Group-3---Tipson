@@ -1,31 +1,32 @@
 $(() => {
     let choice = null;
-    let disabled = true;
+    // let disabled = true;
 
     $('#${matchId}-home-btn').click(() => {
-        choice = {
-            matchId: $ { matchId },
-            userChoice: 'home'
-        }
+        choice = 'home'
     })
 
     $('#${matchId}-draw-btn').click(() => {
-        choice = {
-            matchId: $ { matchId },
-            userChoice: 'draw'
-        }
+        choice = 'draw'
     })
 
     $('#${matchId}-away-btn').click(() => {
-        choice = {
-            matchId: $ { matchId },
-            userChoice: 'away'
-        }
+        choice = 'away'
     })
 
     $('#${matchId}-submit-btn').click(() => {
+        console.log('click', {
+            matchId: $(this).data('matchId'),
+            userChoice: choice,
+        });
+
         if (choice !== null) {
-            $.post('/api/home/submit', choice).done(() => {
+            $.post('/api/home/submit', {
+                choice: {
+                    matchId: $(this).data('matchId'),
+                    userChoice: choice
+                }
+            }).done(() => {
                 $('#${matchId}-submit-btn').toggle();
             });
         }

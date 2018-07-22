@@ -20,7 +20,7 @@ module.exports = class HomeRouter {
     }
 
     post(req, res) {
-        return this.homeService.create(req.body.choice, req.user)
+        return this.homeService.create(req.body, req.user)
             .then((data) => res.json(data))
             .catch((err) => res.status(500).json(err));
     }

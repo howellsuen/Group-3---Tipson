@@ -1,4 +1,5 @@
 const setupPassport = require('./utils/passport');
+const bodyParser = require('body-parser');
 
 // General Initialization
 require('dotenv').config();
@@ -27,10 +28,19 @@ let homeService = new HomeService(knex);
 
 const app = require('./utils/init-app')();
 
+app.use(bodyParser.urlencoded({
+    extended: false
+}))
+
+// parse application/json
+app.use(bodyParser.json())
+
 setupPassport(app, knex);
 
 app.use('/', new ViewRouter().router());
 // app.use('/api/groups', new GroupRouter(groupService).router());
+app.use('/api/home/submit', isLoggedIn, (req) => console.log('req.body', req.body));
+
 app.use('/api/home', isLoggedIn, new HomeRouter(homeService).router());
 
 //https setting

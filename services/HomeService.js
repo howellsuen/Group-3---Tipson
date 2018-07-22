@@ -32,13 +32,13 @@ module.exports = class HomeService {
     }
 
     create(choice, user) {
-        return console.log(choice, user)
-            // return this.knex(PREDICTIONS)
-            //     .insert({
-            //         user_id: user.id,
-            //         match_id: choice.matchId,
-            //         user_choice: choice.userChoice
-            //     });
+        return console.log(user);
+        // return this.knex(PREDICTIONS)
+        //     .insert({
+        //         user_id: user.id,
+        //         match_id: choice.matchId,
+        //         user_choice: choice.userChoice
+        //     });
     }
 
     // function() {
