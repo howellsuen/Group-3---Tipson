@@ -4,6 +4,7 @@ const FacebookStrategy = require('passport-facebook').Strategy;
 module.exports = (app, knex) => {
     app.use(passport.initialize());
     app.use(passport.session());
+
     passport.use('facebook', new FacebookStrategy({
         clientID: process.env.FACEBOOK_ID,
         clientSecret: process.env.FACEBOOK_CLIENT_SECRET,

@@ -23,7 +23,7 @@ module.exports = class ViewRouter {
         );
 
         // callback route for facebook to redirect to
-        // hand control to passport to use code to grab profile info
+        // handle control to passport to use code to grab profile info
         router.get('/auth/facebook/callback', passport.authenticate('facebook', {
             successRedirect: '/home',
             failureRedirect: '/',

@@ -31,7 +31,7 @@ setupPassport(app, knex);
 
 app.use('/', new ViewRouter().router());
 // app.use('/api/groups', new GroupRouter(groupService).router());
-app.use('/api/home', new HomeRouter(homeService).router());
+app.use('/api/home', isLoggedIn, new HomeRouter(homeService).router());
 
 //https setting
 const https = require('https');

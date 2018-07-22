@@ -31,11 +31,21 @@ module.exports = class HomeService {
             .catch(err => console.log(err));
     }
 
-    submit(userInput) {
-        return this.knex(MATCHES)
-            .update(matches)
-            .where("id", id);
+    create(choice, user) {
+        return console.log(choice, user)
+            // return this.knex(PREDICTIONS)
+            //     .insert({
+            //         user_id: user.id,
+            //         match_id: choice.matchId,
+            //         user_choice: choice.userChoice
+            //     });
     }
+
+    // function() {
+    //     if (req.user) {
+
+    //     }
+    // }
 
     // search(searchCriteria, limit = 100, offset = 0) {
     //     return this.knex.select("*").from(USERS)
