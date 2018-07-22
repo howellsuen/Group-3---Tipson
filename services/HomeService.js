@@ -1,6 +1,7 @@
 const moment = require('moment');
 const MATCHES = require("./tables").MATCHES;
 const TEAMS = require("./tables").TEAMS;
+const PREDICTIONS = require("./tables").PREDICTIONS;
 
 module.exports = class HomeService {
 
@@ -19,6 +20,7 @@ module.exports = class HomeService {
                 const matches = [];
                 for (let i = 0; i < results[0].length; i++) {
                     matches.push({
+                        matchId: results[0][i].id,
                         matchDay: moment(results[0][i].matchday).format('YYYY-MM-DD'),
                         homeTeam: results[0][i].name,
                         awayTeam: results[1][i].name
@@ -29,15 +31,15 @@ module.exports = class HomeService {
             .catch(err => console.log(err));
     }
 
-    update(id, user) {
+    submit(userInput) {
         return this.knex(MATCHES)
             .update(matches)
             .where("id", id);
     }
 
-    search(searchCriteria, limit = 100, offset = 0) {
-        return this.knex.select("*").from(USERS)
-            .where(searchCriteria)
-            .limit(limit).offset(offset);
-    }
+    // search(searchCriteria, limit = 100, offset = 0) {
+    //     return this.knex.select("*").from(USERS)
+    //         .where(searchCriteria)
+    //         .limit(limit).offset(offset);
+    // }
 }

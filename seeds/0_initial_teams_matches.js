@@ -49,6 +49,21 @@ exports.seed = function(knex, Promise) {
                     id: 4,
                     league_id: 2,
                     name: '皇家馬德里', //Real Madrid
+<<<<<<< HEAD
+=======
+                    badge: ''
+                },
+                {
+                    id: 5,
+                    league_id: 1,
+                    name: 'Bournemouth',
+                    badge: ''
+                },
+                {
+                    id: 6,
+                    league_id: 1,
+                    name: 'Burnley FC',
+>>>>>>> c0228a26f4adb48e71b6f200d821f40ea1b5adb5
                     badge: ''
                 }
             ]);
@@ -66,6 +81,13 @@ exports.seed = function(knex, Promise) {
                     matchday: '2018-05-13',
                     home_team_id: 2,
                     away_team_id: 1,
+                    result: 'away'
+                },
+                {
+                    id: 3,
+                    matchday: '2018-05-13',
+                    home_team_id: 6,
+                    away_team_id: 5,
                     result: 'away'
                 }
             ]);
