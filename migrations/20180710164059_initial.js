@@ -62,10 +62,7 @@ exports.up = function(knex, Promise) {
             table.integer("away_team_id").unsigned();
             table.foreign("away_team_id").references('teams.id');
 
-            table.enu("result", ['home', 'draw', 'away'], {
-                useNative: true,
-                enumName: 'result_types'
-            });
+            table.string("result");
             table.timestamps(false, true);
         });
     })
@@ -80,10 +77,7 @@ exports.up = function(knex, Promise) {
             table.integer("match_id").unsigned();
             table.foreign("match_id").references('matches.id');
 
-            table.enu("user_choice", ['home', 'draw', 'away'], {
-                useNative: true,
-                enumName: 'choice_types'
-            });
+            table.string("user_choice");
             table.timestamps(false, true);
         });
     });

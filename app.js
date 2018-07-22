@@ -1,5 +1,7 @@
 const setupPassport = require('./utils/passport');
 const bodyParser = require('body-parser');
+const express = require('express');
+const hb = require('express-handlebars');
 
 // General Initialization
 require('dotenv').config();
@@ -23,23 +25,31 @@ const {
     HomeService
 } = require('./services');
 
-// let groupService = new GroupService(new JsonFile('groups.json'));
 let homeService = new HomeService(knex);
 
-const app = require('./utils/init-app')();
+// const app = require('./utils/init-app')();
 
-app.use(bodyParser.urlencoded({
-    extended: false
-}))
+
+let app = express();
+app.engine('handlebars', hb({
+    defaultLayout: 'main'
+}));
+app.set('view engine', 'handlebars');
+app.use(express.static("public"));
 
 // parse application/json
-app.use(bodyParser.json())
+app.use(express.json());
+
+app.use(express.urlencoded({
+    extended: false
+}));
+
+require('./utils/init-sessions')(app);
 
 setupPassport(app, knex);
 
 app.use('/', new ViewRouter().router());
-// app.use('/api/groups', new GroupRouter(groupService).router());
-app.use('/api/home/submit', isLoggedIn, (req) => console.log('req.body', req.body));
+// app.use('/api/home/submit', isLoggedIn, (req) => console.log('req.body', req.body));
 
 app.use('/api/home', isLoggedIn, new HomeRouter(homeService).router());
 

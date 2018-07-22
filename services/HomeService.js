@@ -32,20 +32,16 @@ module.exports = class HomeService {
     }
 
     create(choice, user) {
-        return console.log(user);
-        // return this.knex(PREDICTIONS)
-        //     .insert({
-        //         user_id: user.id,
-        //         match_id: choice.matchId,
-        //         user_choice: choice.userChoice
-        //     });
+        console.log(user.id);
+        console.log(choice.matchId);
+        console.log(choice.userChoice);
+
+        return this.knex(PREDICTIONS).insert({
+            user_id: user.id,
+            match_id: choice.matchId,
+            user_choice: choice.userChoice.toString()
+        });
     }
-
-    // function() {
-    //     if (req.user) {
-
-    //     }
-    // }
 
     // search(searchCriteria, limit = 100, offset = 0) {
     //     return this.knex.select("*").from(USERS)

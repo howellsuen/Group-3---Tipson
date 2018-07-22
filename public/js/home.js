@@ -40,10 +40,9 @@ $(() => {
 
         if (choice !== null) {
             $.post('/api/home/submit', {
-                choice:{
                     matchId: ${matchId},
                     userChoice: choice,
-                }}).done(() => {
+            }).done(() => {
                 $('#${matchId}-submit-btn').toggle();
             });
         }
