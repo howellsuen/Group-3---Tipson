@@ -3,7 +3,7 @@ const expressSession = require('express-session');
 module.exports = (app) => {
     const settings = {
         secret: "supersecret",
-        resave: true,
+        resave: false,
         saveUninitialized: true,
         cookie: {
             "path": '/',

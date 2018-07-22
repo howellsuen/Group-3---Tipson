@@ -16,38 +16,37 @@ $(() => {
             <button class="btn btn-success submit-btn" id="${matchId}-submit-btn" type="button">提交</button>
         </div>
         <script type='text/javascript'>
-$(() => {
-    let choice = null;
-    // let disabled = true;
+            $(() => {
+                let choice = null;
+                
+                $('#${matchId}-home-btn').click(() => {
+                    choice = 'home'
+                })
 
-    $('#${matchId}-home-btn').click(() => {
-        choice = 'home'
-    })
+                $('#${matchId}-draw-btn').click(() => {
+                    choice = 'draw'
+                })
 
-    $('#${matchId}-draw-btn').click(() => {
-        choice = 'draw'
-    })
+                $('#${matchId}-away-btn').click(() => {
+                    choice = 'away'
+                })
 
-    $('#${matchId}-away-btn').click(() => {
-        choice = 'away'
-    })
+                $('#${matchId}-submit-btn').click(() => {
+                    console.log('submit', {
+                        matchId: ${matchId},
+                        userChoice: choice,
+                    });
 
-    $('#${matchId}-submit-btn').click(() => {
-        console.log('click', {
-            matchId: ${matchId},
-            userChoice: choice,
-        });
-
-        if (choice !== null) {
-            $.post('/api/home/submit', {
-                    matchId: ${matchId},
-                    userChoice: choice,
-            }).done(() => {
-                $('#${matchId}-submit-btn').toggle();
+                    if (choice !== null) {
+                        $.post('/api/home/submit', {
+                                matchId: ${matchId},
+                                userChoice: choice,
+                        }).done(() => {
+                            $('#${matchId}-submit-btn').toggle();
+                        });
+                    }
+                })
             });
-        }
-    })
-});
         </script>        
         `
     };

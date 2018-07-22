@@ -32,9 +32,9 @@ module.exports = class HomeService {
     }
 
     create(choice, user) {
-        console.log(user.id);
-        console.log(choice.matchId);
-        console.log(choice.userChoice);
+        console.log('user_id', user.id);
+        console.log('match_id', choice.matchId);
+        console.log('user_choice', choice.userChoice);
 
         return this.knex(PREDICTIONS).insert({
             user_id: user.id,
