@@ -23,7 +23,9 @@ module.exports = class HomeService {
                         matchId: results[0][i].id,
                         matchDay: moment(results[0][i].matchday).format('YYYY-MM-DD'),
                         homeTeam: results[0][i].name,
-                        awayTeam: results[1][i].name
+                        homeBadge: results[0][i].badge,
+                        awayTeam: results[1][i].name,
+                        awayBadge: results[1][i].badge
                     })
                 }
                 return matches;
