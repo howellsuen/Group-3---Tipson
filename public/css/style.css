@@ -1,38 +1,42 @@
-body{
+body {
     background-color: #1E76AE;
     font-family: 'Lato', 'Open Sans', sans-serif;
     font-size: 30px;
     color: #FFF;
 }
 
-#landing-main{
+#landing-main {
     margin-top: 2em;
     text-align: center;
 }
 
-#landing-h1{
+#landing-h1 {
     font-family: 'Berkshire Swash', cursive;
     font-size: 3em;
 }
 
-#landing-h2{
+#landing-h2 {
     font-size: 2em;
 }
 
-#landing-h3{
+#landing-h3 {
     font-size: 0.8em;
     margin-top: 2em;
 }
 
-#fb-login{
+#fb-login {
     margin-top: 3em;
 }
 
-.trademark{
+.trademark {
     font-size: 0.4em;
     margin-top: 6em;
 }
 
-.footer-btn{
+.footer-btn {
     background: #FFF;
+}
+
+.space {
+    height: 2em;
 }

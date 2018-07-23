@@ -15,6 +15,7 @@ $(() => {
             </button>
             <button class="btn btn-success submit-btn" id="${matchId}-submit-btn" type="button">提交</button>
         </div>
+
         
        <script type='text/javascript'>
             $(() => {
