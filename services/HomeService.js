@@ -64,6 +64,8 @@ module.exports = class HomeService {
                     return this.knex(USERS)
                         .where('id', user.id)
                         .increment('total_wins', 1);
+                } else {
+                    return 'done';
                 }
             });
     }

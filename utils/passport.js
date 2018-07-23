@@ -24,7 +24,7 @@ module.exports = (app, knex) => {
                 })
                 return done(null, user)
             } else {
-                console.log(profile);
+                // console.log(profile);
                 return done(null, usersResult[0]);
             }
         } catch (err) {
