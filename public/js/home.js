@@ -15,7 +15,8 @@ $(() => {
             </button>
             <button class="btn btn-success submit-btn" id="${matchId}-submit-btn" type="button">提交</button>
         </div>
-        <script type='text/javascript'>
+        
+       <script type='text/javascript'>
             $(() => {
                 let choice = null;
                 
@@ -42,7 +43,7 @@ $(() => {
                                 matchId: ${matchId},
                                 userChoice: choice,
                         }).done(() => {
-                            $('#${matchId}-submit-btn').toggle();
+                            $("#${matchId}-submit-btn").prop('disabled', true);
                         });
                     }
                 })
