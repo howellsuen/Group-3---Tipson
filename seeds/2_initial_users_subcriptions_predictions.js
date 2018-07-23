@@ -1,9 +1,9 @@
 exports.seed = function(knex, Promise) {
     // Deletes ALL existing entries
-    return knex('predictions').del()
-        .then(() => {
-            return knex('subscriptions').del();
-        })
+    return knex('subscriptions').del()
+        // .then(() => {
+        //     return knex('subscriptions').del();
+        // })
         .then(() => {
             return knex('users').del();
         })
@@ -70,19 +70,19 @@ exports.seed = function(knex, Promise) {
                 }
             ]);
         })
-        .then(function() {
-            return knex('predictions').insert([{
-                    id: 1,
-                    user_id: 1,
-                    match_id: 2,
-                    user_choice: 'away',
-                },
-                {
-                    id: 2,
-                    user_id: 2,
-                    match_id: 1,
-                    user_choice: 'home',
-                }
-            ]);
-        });
+        // .then(function() {
+        //     return knex('predictions').insert([{
+        //             id: 1,
+        //             user_id: 1,
+        //             match_id: 2,
+        //             user_choice: 'away',
+        //         },
+        //         {
+        //             id: 2,
+        //             user_id: 2,
+        //             match_id: 1,
+        //             user_choice: 'home',
+        //         }
+        //     ]);
+        // });
 };
