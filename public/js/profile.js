@@ -40,7 +40,6 @@ $(() => {
                     <li class="d-flex justify-content-center history-content">
                         <h3>近十場結果</h3>
                         <p>(左為最新)</p>
-                        <p>${recent10}</p>
                     </li>
                     <li>
                         <div class="d-flex justify-content-around" id="history-content-preview">

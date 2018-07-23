@@ -1,6 +1,7 @@
 const express = require('express');
 const passport = require('passport');
 const isLoggedIn = require('./utils/guard').isLoggedIn;
+const expressSession = require('express-session');
 
 module.exports = class ViewRouter {
     // remember to put back isLoggedIn,
@@ -33,7 +34,9 @@ module.exports = class ViewRouter {
         // auth logout
         router.get('/logout', (req, res) => {
             // handle with passport
-            res.send('logging out');
+            req.logout();
+            // expressSession.clear();
+            res.redirect('/');
         });
 
         return router;

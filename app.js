@@ -14,16 +14,19 @@ const ViewRouter = require('./ViewRouter');
 
 const {
     HomeRouter,
-    ProfileRouter
+    ProfileRouter,
+    HistoryRouter
 } = require('./routers');
 
 const {
     HomeService,
-    ProfileService
+    ProfileService,
+    HistoryService
 } = require('./services');
 
 let homeService = new HomeService(knex);
 let profileService = new ProfileService(knex);
+let historyService = new HistoryService(knex);
 
 const app = require('./utils/init-app')();
 
@@ -35,6 +38,7 @@ app.use('/', new ViewRouter().router());
 // app.use('/api/home/submit', isLoggedIn, (req) => console.log('req.body', req.body));
 app.use('/api/home', isLoggedIn, new HomeRouter(homeService).router());
 app.use('/api/profile', isLoggedIn, new ProfileRouter(profileService).router());
+app.use('/api/history', isLoggedIn, new HistoryRouter(historyService).router());
 
 //https setting
 const https = require('https');
