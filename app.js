@@ -13,14 +13,17 @@ const isLoggedIn = require('./utils/guard').isLoggedIn;
 const ViewRouter = require('./ViewRouter');
 
 const {
-    HomeRouter
+    HomeRouter,
+    ProfileRouter
 } = require('./routers');
 
 const {
-    HomeService
+    HomeService,
+    ProfileService
 } = require('./services');
 
 let homeService = new HomeService(knex);
+let profileService = new ProfileService(knex);
 
 const app = require('./utils/init-app')();
 
@@ -31,6 +34,7 @@ setupPassport(app, knex);
 app.use('/', new ViewRouter().router());
 // app.use('/api/home/submit', isLoggedIn, (req) => console.log('req.body', req.body));
 app.use('/api/home', isLoggedIn, new HomeRouter(homeService).router());
+app.use('/api/profile', isLoggedIn, new ProfileRouter(profileService).router());
 
 //https setting
 const https = require('https');

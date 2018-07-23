@@ -8,8 +8,8 @@ exports.up = function(knex, Promise) {
         table.string("payment_id");
         table.string("profile_picture");
         table.string("description");
-        table.integer("total_tips");
-        table.integer("total_wins");
+        table.integer("total_tips").defaultTo(0);
+        table.integer("total_wins").defaultTo(0);
         table.timestamps(false, true);
     })
 

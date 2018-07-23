@@ -1,10 +1,10 @@
 const teamData = require('../database/premier-league-teams');
 
 exports.seed = function(knex, Promise) {
-    return knex('matches').del()
-        // .then(() => {
-        //     return knex('matches').del();
-        // })
+    return knex('predictions').del()
+        .then(() => {
+            return knex('matches').del();
+        })
         .then(() => {
             return knex('teams').del();
         })

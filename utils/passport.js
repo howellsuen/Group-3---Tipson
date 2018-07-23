@@ -8,7 +8,8 @@ module.exports = (app, knex) => {
     passport.use('facebook', new FacebookStrategy({
         clientID: process.env.FACEBOOK_ID,
         clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
-        callbackURL: `/auth/facebook/callback`
+        callbackURL: `/auth/facebook/callback`,
+        profileFields: ['id', 'name', 'picture.type(large)', 'emails', 'displayName', 'about', 'gender']
     }, async(accessToken, refreshToken, profile, done) => {
         try {
             let usersResult = await knex('users').where({
@@ -19,10 +20,11 @@ module.exports = (app, knex) => {
                     name: profile.displayName,
                     facebookId: profile.id,
                     accessToken: accessToken,
-                    profile_picture: profile.picture
+                    profile_picture: profile.photos[0].value
                 })
                 return done(null, user)
             } else {
+                console.log(profile);
                 return done(null, usersResult[0]);
             }
         } catch (err) {

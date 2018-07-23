@@ -1,7 +1,8 @@
 const moment = require('moment');
-const MATCHES = require("./tables").MATCHES;
 const TEAMS = require("./tables").TEAMS;
+const MATCHES = require("./tables").MATCHES;
 const PREDICTIONS = require("./tables").PREDICTIONS;
+const USERS = require("./tables").USERS;
 
 module.exports = class HomeService {
 
@@ -38,11 +39,33 @@ module.exports = class HomeService {
         console.log('match_id', choice.matchId);
         console.log('user_choice', choice.userChoice);
 
-        return this.knex(PREDICTIONS).insert({
+        // return this.knex(PREDICTIONS).insert({
+        //     user_id: user.id,
+        //     match_id: choice.matchId,
+        //     user_choice: choice.userChoice.toString()
+        // });
+
+        const predictions = this.knex(PREDICTIONS).insert({
             user_id: user.id,
             match_id: choice.matchId,
-            user_choice: choice.userChoice.toString()
+            user_choice: choice.userChoice
         });
+
+        const updateUserTips = this.knex(USERS)
+            .where('id', user.id)
+            .increment('total_tips', 1);
+
+        const matchResult = this.knex.select('result').from(MATCHES).where('id', choice.matchId);
+
+        return Promise.all([predictions, updateUserTips, matchResult])
+            .then((data) => {
+                console.log('match_result', data[2][0].result);
+                if (data[2][0].result === choice.userChoice) {
+                    return this.knex(USERS)
+                        .where('id', user.id)
+                        .increment('total_wins', 1);
+                }
+            });
     }
 
     // search(searchCriteria, limit = 100, offset = 0) {

@@ -1,9 +1,7 @@
-module.exports.GROUPS = "groups";
-
-module.exports.USERS = "users";
+module.exports.TEAMS = "teams";
 
 module.exports.MATCHES = "matches";
 
-module.exports.TEAMS = "teams";
-
 module.exports.PREDICTIONS = "predictions";
+
+module.exports.USERS = "users";
