@@ -43,6 +43,7 @@ $(() => {
                     </li>
                     <li>
                         <div class="d-flex justify-content-around" id="history-content-preview">
+                            <div class="recent" id="recent-0"></div>
                             <div class="recent" id="recent-1"></div>
                             <div class="recent" id="recent-2"></div>
                             <div class="recent" id="recent-3"></div>
@@ -52,7 +53,6 @@ $(() => {
                             <div class="recent" id="recent-7"></div>
                             <div class="recent" id="recent-8"></div>
                             <div class="recent" id="recent-9"></div>
-                            <div class="recent" id="recent-10"></div>
                         </div>
                     </li>
                 </ul>
@@ -67,19 +67,3 @@ $(() => {
         $('#user-profile').append(ProfileTemplate(user[0].profile_picture, user[0].name, user[0].description, user[0].total_tips, user[0].total_wins, winPercentage(user[0].total_tips, user[0].total_wins), user.recent10))
     });
 });
-
-
-//those recent color
-function recentColor(){
-    let recent = true; //change to the result data
-    
-    //if(result === win)
-      if(recent){
-        console.log(recent);
-        $($('.recent')[2]).css("background-color", "#77D353");
-      } else{
-        $('.recent').css("background-color", "#F95F62");
-      }
-  }
-  
-  recentColor();
