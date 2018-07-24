@@ -67,3 +67,19 @@ $(() => {
         $('#user-profile').append(ProfileTemplate(user[0].profile_picture, user[0].name, user[0].description, user[0].total_tips, user[0].total_wins, winPercentage(user[0].total_tips, user[0].total_wins), user.recent10))
     });
 });
+
+
+//those recent color
+function recentColor(){
+    let recent = true; //change to the result data
+    
+    //if(result === win)
+      if(recent){
+        console.log(recent);
+        $($('.recent')[2]).css("background-color", "#77D353");
+      } else{
+        $('.recent').css("background-color", "#F95F62");
+      }
+  }
+  
+  recentColor();
