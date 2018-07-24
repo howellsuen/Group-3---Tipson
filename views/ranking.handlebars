@@ -1,14 +1,14 @@
-<body>
+<div>
     <header class="d-flex justify-content-center home-header">
-        <h2 id="home-title">十大貼神</h2>
+        <h2 id="home-title">排行榜</h2>
     </header>
     <section class="best-tipster d-flex justify-content-center">
         <ul>
-            <li class="d-flex justify-content-start best-worst-title">
-                <a href="/ranking">
-                    <i class="fas fa-angle-left"></i>
-                </a>
+            <li class="d-flex justify-content-end ranking-title">
                 <h3>十大貼神</h3>
+                <a href="/best">
+                    <i class="fas fa-angle-right"></i>
+                </a>
             </li>
             <a href="#" class="ranking-link">
                 <li class="d-flex justify-content-between ranking-content">
@@ -55,13 +55,23 @@
                     <div class="ranking-rate">78%</div>
                 </li>
             </a>
+        </ul>
+    </section>
+        <section class="worst-tipster d-flex justify-content-center">
+        <ul>
+            <li class="d-flex justify-content-end ranking-title">
+                <h3>十大燈神</h3>
+                <a href="/worst">
+                    <i class="fas fa-angle-right"></i>
+                </a>
+            </li>
             <a href="#" class="ranking-link">
                 <li class="d-flex justify-content-between ranking-content">
                     <div>
                         <img src="/images/avatar.png" class="img-fluid rounded ranking-pic" alt="user-image">
                     </div>
-                    <div class="ranking-name">Perry</div>
-                    <div class="ranking-rate">75%</div>
+                    <div class="ranking-name">誠哥</div>
+                    <div class="ranking-rate">0%</div>
                 </li>
             </a>
             <a href="#" class="ranking-link">
@@ -69,8 +79,8 @@
                     <div>
                         <img src="/images/avatar.png" class="img-fluid rounded ranking-pic" alt="user-image">
                     </div>
-                    <div class="ranking-name">Accelerate</div>
-                    <div class="ranking-rate">70%</div>
+                    <div class="ranking-name">Max</div>
+                    <div class="ranking-rate">1%</div>
                 </li>
             </a>
             <a href="#" class="ranking-link">
@@ -78,8 +88,8 @@
                     <div>
                         <img src="/images/avatar.png" class="img-fluid rounded ranking-pic" alt="user-image">
                     </div>
-                    <div class="ranking-name">大小姐</div>
-                    <div class="ranking-rate">60%</div>
+                    <div class="ranking-name">B朗</div>
+                    <div class="ranking-rate">3%</div>
                 </li>
             </a>
             <a href="#" class="ranking-link">
@@ -87,8 +97,8 @@
                     <div>
                         <img src="/images/avatar.png" class="img-fluid rounded ranking-pic" alt="user-image">
                     </div>
-                    <div class="ranking-name">送水輝</div>
-                    <div class="ranking-rate">54%</div>
+                    <div class="ranking-name">美欺</div>
+                    <div class="ranking-rate">4%</div>
                 </li>
             </a>
             <a href="#" class="ranking-link">
@@ -96,11 +106,12 @@
                     <div>
                         <img src="/images/avatar.png" class="img-fluid rounded ranking-pic" alt="user-image">
                     </div>
-                    <div class="ranking-name">獎門人</div>
-                    <div class="ranking-rate">50%</div>
+                    <div class="ranking-name">美猴王齊天大聖孫悟空</div>
+                    <div class="ranking-rate">5%</div>
                 </li>
             </a>
         </ul>
     </section>
+
     {{> footer }}
-</body>
+</div>

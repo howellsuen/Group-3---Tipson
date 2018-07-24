@@ -7,14 +7,14 @@ module.exports = class ViewRouter {
     // remember to put back isLoggedIn,
     router() {
         const router = express.Router();
-        router.get('/', (req, res) => res.render("index3"));
-        router.get('/home', isLoggedIn, (req, res) => res.render("home3"));
-        router.get('/ranking', isLoggedIn, (req, res) => res.render("ranking3"));
-        router.get('/search', isLoggedIn, (req, res) => res.render("search3"));
+        router.get('/', (req, res) => res.render("index"));
+        router.get('/home', isLoggedIn, (req, res) => res.render("home"));
+        router.get('/ranking', isLoggedIn, (req, res) => res.render("ranking"));
+        router.get('/search', isLoggedIn, (req, res) => res.render("search"));
         router.get('/profile', isLoggedIn, (req, res) => res.render("profile"));
-        router.get('/best', isLoggedIn, (req, res) => res.render("bestTipster3"));
-        router.get('/worst', isLoggedIn, (req, res) => res.render("worstTipster3"));
-        router.get('/history', isLoggedIn, (req, res) => res.render("history3"));
+        router.get('/best', isLoggedIn, (req, res) => res.render("bestTipster"));
+        router.get('/worst', isLoggedIn, (req, res) => res.render("worstTipster"));
+        router.get('/history', isLoggedIn, (req, res) => res.render("history"));
 
         // auth with facebook
         router.get('/auth/facebook',
@@ -32,11 +32,11 @@ module.exports = class ViewRouter {
         }));
 
         // auth logout
-        router.get('/logout', (req, res) => {
-            // handle with passport
-            req.logout();
-            // expressSession.clear();
-            res.redirect('/');
+        router.get('/logout', function(req, res) {
+            req.logOut();
+            req.session.destroy(function(err) {
+                res.redirect('/');
+            });
         });
 
         return router;
