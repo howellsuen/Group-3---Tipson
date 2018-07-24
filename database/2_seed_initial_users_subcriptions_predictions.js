@@ -7,23 +7,22 @@ exports.seed = function(knex, Promise) {
         .then(() => {
             return knex('users').del();
         })
-        .then(() => {
-            // Inserts seed entries
-            return knex('users').insert([{
-                id: 1,
-                name: 'Test User',
-                facebookId: '',
-                accessToken: '',
-                paid: 'false',
-                payment_id: '',
-                profile_picture: '',
-                description: 'Have faith!',
-                total_tips: '1',
-                total_wins: '1'
-            }]);
-        });
 };
-
+// .then(() => {
+//     // Inserts seed entries
+//     return knex('users').insert([{
+//         id: 1,
+//         name: 'Test User',
+//         facebookId: '',
+//         accessToken: '',
+//         paid: 'false',
+//         payment_id: '',
+//         profile_picture: '',
+//         description: 'Have faith!',
+//         total_tips: '1',
+//         total_wins: '1'
+//     }]);
+// });
 //                 {
 //                     id: 2,
 //                     name: 'Perry',
