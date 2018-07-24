@@ -34,45 +34,71 @@ module.exports = class HomeService {
             .catch(err => console.log(err));
     }
 
-    create(choice, user) {
+    async create(choice, user) {
         console.log('user_id', user.id);
         console.log('match_id', choice.matchId);
         console.log('user_choice', choice.userChoice);
 
-        // return this.knex(PREDICTIONS).insert({
-        //     user_id: user.id,
-        //     match_id: choice.matchId,
-        //     user_choice: choice.userChoice.toString()
-        // });
+        try {
+            const predictionRecord = await this.knex(PREDICTIONS)
+                .where('user_id', user.id)
+                .andWhere('match_id', choice.matchId);
 
-        const predictions = this.knex(PREDICTIONS).insert({
-            user_id: user.id,
-            match_id: choice.matchId,
-            user_choice: choice.userChoice
-        });
+            if (predictionRecord.length == 0) {
+                const predictions = this.knex(PREDICTIONS).insert({
+                    user_id: user.id,
+                    match_id: choice.matchId,
+                    user_choice: choice.userChoice
+                })
 
-        const updateUserTips = this.knex(USERS)
-            .where('id', user.id)
-            .increment('total_tips', 1);
+                const updateUserTips = this.knex(USERS)
+                    .where('id', user.id)
+                    .increment('total_tips', 1);
 
-        const matchResult = this.knex.select('result').from(MATCHES).where('id', choice.matchId);
+                const matchResult = this.knex.select('result').from(MATCHES).where('id', choice.matchId);
 
-        return Promise.all([predictions, updateUserTips, matchResult])
-            .then((data) => {
-                console.log('match_result', data[2][0].result);
-                if (data[2][0].result === choice.userChoice) {
-                    return this.knex(USERS)
-                        .where('id', user.id)
-                        .increment('total_wins', 1);
-                } else {
-                    return 'done';
-                }
-            });
+                return await Promise.all([predictions, updateUserTips, matchResult])
+                    .then((data) => {
+                        console.log('match_result', data[2][0].result);
+                        if (data[2][0].result === choice.userChoice) {
+                            return this.knex(USERS)
+                                .where('id', user.id)
+                                .increment('total_wins', 1);
+                        } else {
+                            return 'done';
+                        }
+                    })
+            } else {
+                throw new Error();
+            }
+        } catch (err) {
+            throw err;
+        }
     }
-
-    // search(searchCriteria, limit = 100, offset = 0) {
-    //     return this.knex.select("*").from(USERS)
-    //         .where(searchCriteria)
-    //         .limit(limit).offset(offset);
-    // }
 }
+
+//         const predictions = this.knex(PREDICTIONS).insert({
+//             user_id: user.id,
+//             match_id: choice.matchId,
+//             user_choice: choice.userChoice
+//         });
+
+//         const updateUserTips = this.knex(USERS)
+//             .where('id', user.id)
+//             .increment('total_tips', 1);
+
+//         const matchResult = this.knex.select('result').from(MATCHES).where('id', choice.matchId);
+
+//         return Promise.all([predictions, updateUserTips, matchResult])
+//             .then((data) => {
+//                 console.log('match_result', data[2][0].result);
+//                 if (data[2][0].result === choice.userChoice) {
+//                     return this.knex(USERS)
+//                         .where('id', user.id)
+//                         .increment('total_wins', 1);
+//                 } else {
+//                     return 'done';
+//                 }
+//             });
+//     }
+// }

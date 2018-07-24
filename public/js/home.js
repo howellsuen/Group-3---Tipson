@@ -45,7 +45,9 @@ $(() => {
                                 userChoice: choice,
                         }).done(() => {
                             $("#${matchId}-submit-btn").prop('disabled', true);
-                        });
+                        }).fail(() => {
+                            alert("已經揀過啦! 大哥!");
+                        })
                     }
                 })
             });
@@ -63,5 +65,5 @@ $(() => {
     }).then(() => $('.home-prediction > .prediction-btn').click(function() { // add yellow color to buttons when being clicked
         $('.home-prediction > .prediction-btn').removeClass('btn-warning');
         $(this).addClass('btn-warning');
-    }));
-});
+    }))
+})

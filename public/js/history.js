@@ -11,7 +11,7 @@ $(() => {
     };
 
     $.get('/api/history').then((results) => {
-        console.log(results);
+        // console.log(results);
         results.forEach(result => {
             let tipResult = '';
             if (result.result === result.userChoice) {
