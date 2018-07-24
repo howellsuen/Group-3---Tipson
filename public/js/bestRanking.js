@@ -1,11 +1,19 @@
 $(() => {
     const RankingTemplate = (profilePicture, name, description, totalTips, totalWins, winPercentage, recent10) => {
         return `
-
+                <a href="#" class="ranking-link">
+                <li class="d-flex justify-content-between ranking-content">
+                    <div>
+                        <img src="/images/avatar.png" class="img-fluid rounded ranking-pic" alt="user-image">
+                    </div>
+                    <div class="ranking-name">Alex</div>
+                    <div class="ranking-rate">90%</div>
+                </li>
+            </a>
         `
     };
 
-    $.get('/api/profile').then((user) => {
+    $.get('/api/ranking').then((user) => {
         function winPercentage(totalTips, totalWins) {
             return Math.floor(totalWins / totalTips * 100) + '%';
         }
