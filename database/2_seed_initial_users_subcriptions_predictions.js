@@ -8,6 +8,7 @@ exports.seed = function(knex, Promise) {
             return knex('users').del();
         })
 };
+
 // .then(() => {
 //     // Inserts seed entries
 //     return knex('users').insert([{

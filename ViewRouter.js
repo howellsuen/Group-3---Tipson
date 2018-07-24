@@ -19,7 +19,7 @@ module.exports = class ViewRouter {
         // auth with facebook
         router.get('/auth/facebook',
             passport.authenticate('facebook', {
-                scope: ['user_location', 'email']
+                scope: ['email']
             })
         );
 
