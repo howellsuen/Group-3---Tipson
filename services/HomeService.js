@@ -12,12 +12,17 @@ module.exports = class HomeService {
 
     list() {
         const homeTeam = this.knex.select("matches.id", "matchday", "name", "badge")
-            .from(TEAMS).join(MATCHES, "home_team_id", "teams.id").where("matchday", "2018-05-13");
+            .from(TEAMS).join(MATCHES, "home_team_id", "teams.id")
+            .where("matchday", "2018-05-13")
+            .orderBy('matches.id', 'asce');
         const awayTeam = this.knex.select("matches.id", "matchday", "name", "badge")
-            .from(TEAMS).join(MATCHES, "away_team_id", "teams.id").where("matchday", "2018-05-13");
+            .from(TEAMS).join(MATCHES, "away_team_id", "teams.id")
+            .where("matchday", "2018-05-13")
+            .orderBy('matches.id', 'asce');
 
         return Promise.all([homeTeam, awayTeam])
             .then(results => {
+                // console.log(results);
                 const matches = [];
                 for (let i = 0; i < results[0].length; i++) {
                     matches.push({

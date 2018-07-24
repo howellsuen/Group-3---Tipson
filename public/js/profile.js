@@ -1,5 +1,5 @@
 $(() => {
-    const ProfileTemplate = (profilePicture, name, description, totalTips, totalWins, winPercentage, recent10) => {
+    const ProfileTemplate = (profilePicture, name, description, totalTips, totalWins, winPercentage) => {
         return `
             <header class="d-flex justify-content-center profile-header">
                 <h2 id="profile-title" alt="profile-picture">個人檔案</h2>
@@ -62,8 +62,12 @@ $(() => {
 
     $.get('/api/profile').then((user) => {
         function winPercentage(totalTips, totalWins) {
-            return Math.floor(totalWins / totalTips * 100) + '%';
+            if (totalTips !== 0) {
+                return Math.floor(totalWins / totalTips * 100) + '%';
+            } else {
+                return 0 + '%';
+            }
         }
-        $('#user-profile').append(ProfileTemplate(user[0].profile_picture, user[0].name, user[0].description, user[0].total_tips, user[0].total_wins, winPercentage(user[0].total_tips, user[0].total_wins), user.recent10))
+        $('#user-profile').append(ProfileTemplate(user[0].profile_picture, user[0].name, user[0].description, user[0].total_tips, user[0].total_wins, winPercentage(user[0].total_tips, user[0].total_wins)))
     });
 });
