@@ -33,9 +33,17 @@ Technologies applied 
 * Node.js
     * Express 
     * Express-handlebars
+    * Express-session
     * Passport
     * Knex
+    * Moment
 * PostgreSQL
+
+Future Improvement
+* Different ranking and points system
+* Subscription (following tipsters and get notifications)
+* Payment system (buy and sell tips)
+
 
 Other tools used  
 Task Manager:  https://trello.com/b/dxOUqqVK/soccer-app
