@@ -1,5 +1,3 @@
-const setupPassport = require('./utils/passport');
-
 // General Initialization
 require('dotenv').config();
 const NODE_ENV = process.env.NODE_ENV || 'development'
@@ -28,11 +26,7 @@ let homeService = new HomeService(knex);
 let profileService = new ProfileService(knex);
 let historyService = new HistoryService(knex);
 
-const app = require('./utils/init-app')();
-
-require('./utils/init-sessions')(app);
-
-setupPassport(app, knex);
+const app = require('./utils/init-app')(knex);
 
 app.use('/', new ViewRouter().router());
 // app.use('/api/home/submit', isLoggedIn, (req) => console.log('req.body', req.body));

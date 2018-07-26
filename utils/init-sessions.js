@@ -4,7 +4,7 @@ module.exports = (app) => {
     const settings = {
         secret: "supersecret",
         resave: false,
-        saveUninitialized: true,
+        saveUninitialized: false,
         cookie: {
             "path": '/',
             "httpOnly": true,

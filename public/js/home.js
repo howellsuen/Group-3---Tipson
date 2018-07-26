@@ -6,14 +6,14 @@ $(() => {
                 <img src='${homeBadge}' alt="" class="badgeContainer">
                 <p>${homeTeam}</p>
             </button>
-            <button type="button" id="${matchId}-draw-btn" class="btn btn-secondary prediction-btn">
+            <button type="button" id="${matchId}-draw-btn" class="btn btn-secondary prediction-btn draw-btn" data-id="${matchId}">
                 <h3>打和</h3>
             </button>
             <button type="button" id="${matchId}-away-btn" class="btn btn-secondary prediction-btn">
                 <img src='${awayBadge}' alt="" class="badgeContainer">
                 <p>${awayTeam}</p>
             </button>
-            <button class="btn btn-success submit-btn" id="${matchId}-submit-btn" type="button">提交</button>
+            <button class="btn btn-success submit-btn"  data-id="${matchId}" id="${matchId}-submit-btn" type="button">提交</button>
         </div>
 
         
@@ -54,6 +54,27 @@ $(() => {
         </script>        
         `
     };
+
+    const choices = {}
+
+    //[CODE REVIEW]
+    $(document.body).on('click', '.draw-btn', () => {
+        choices[$(this).data('id')] = 'draw';
+    })
+
+    // $('.submit-btn').click(() => {
+    $(document.body).on('click', '.submit-btn', () => {
+        if (choice !== null) {
+            $.post('/api/home/submit', {
+                matchId: $(this).data('id'),
+                userChoice: choice,
+            }).done(() => {
+                $("#${matchId}-submit-btn").prop('disabled', true);
+            }).fail(() => {
+                alert("已經揀過啦! 大哥!");
+            })
+        }
+    })
 
     $.get('/api/home').then((matches) => {
         $('#home-date').append(`<p>${matches[0].matchDay}</p>`)

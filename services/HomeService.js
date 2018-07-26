@@ -11,6 +11,14 @@ module.exports = class HomeService {
     }
 
     list() {
+        // const homeTeam = this.knex.select("matches.id", "matchday", "home_team.name as home_team_name", "home_team.badge as home_team_badge", "away_team.name as away_team_name")
+        //     .from(TEAMS)
+        //     .join(MATCHES + ' as home_team', "home_team_id", "teams.id")
+        //     .join(MATCHES + ' as away_team', "away_team_id", "teams.id")
+        //     .where("matchday", "2018-05-13")
+        //     .orderBy('matches.id', 'asce');
+
+
         const homeTeam = this.knex.select("matches.id", "matchday", "name", "badge")
             .from(TEAMS).join(MATCHES, "home_team_id", "teams.id")
             .where("matchday", "2018-05-13")
@@ -45,6 +53,8 @@ module.exports = class HomeService {
         console.log('user_choice', choice.userChoice);
 
         try {
+            // [CODE REVIEW] Use transaction here
+
             const predictionRecord = await this.knex(PREDICTIONS)
                 .where('user_id', user.id)
                 .andWhere('match_id', choice.matchId);

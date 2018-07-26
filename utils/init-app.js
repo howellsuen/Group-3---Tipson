@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const hb = require('express-handlebars');
 
-module.exports = () => {
+module.exports = (knex) => {
     let app = express();
     app.use(bodyParser.json());
     app.use(express.urlencoded({
@@ -13,6 +13,7 @@ module.exports = () => {
     app.use(express.static("public"));
 
     require('./init-sessions')(app);
+    require('./init-passport')(app, knex);
 
     return app;
 }

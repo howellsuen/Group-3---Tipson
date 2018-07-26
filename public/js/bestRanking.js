@@ -1,3 +1,5 @@
+// not in use now
+
 $(() => {
     const RankingTemplate = (profilePicture, name, description, totalTips, totalWins, winPercentage, recent10) => {
         return `

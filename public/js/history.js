@@ -3,8 +3,8 @@ $(() => {
         return `
                         <tr>
                         <th scope="row">${matchDay}</th>
-                        <td>${homeTeam} vs ${awayTeam}</td>
-                        <td>${matchResult}</td>
+                        <td>${escape(homeTeam)} vs ${escape(awayTeam)}</td>
+                        <td>${escape(matchResult)}</td>
                         <td>${tipResult}</td>
                         </tr>
                         `
