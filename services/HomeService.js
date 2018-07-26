@@ -11,13 +11,13 @@ module.exports = class HomeService {
     }
 
     list() {
-        // const homeTeam = this.knex.select("matches.id", "matchday", "home_team.name as home_team_name", "home_team.badge as home_team_badge", "away_team.name as away_team_name")
-        //     .from(TEAMS)
-        //     .join(MATCHES + ' as home_team', "home_team_id", "teams.id")
-        //     .join(MATCHES + ' as away_team', "away_team_id", "teams.id")
+        // [CODE REVIEW] Use .join two times instead
+        // return this.knex.select("matches.id", "matchday", "ht.name as home_team_name", "ht.badge as home_team_badge", "at.name as away_team_name", "at.badge as away_team_badge")
+        //     .from(MATCHES)
+        //     .join(TEAMS + ' As ht', "ht.id", "matches.home_team_id")
+        //     .join(TEAMS + ' As at', "at.id", "matches.away_team_id")
         //     .where("matchday", "2018-05-13")
         //     .orderBy('matches.id', 'asce');
-
 
         const homeTeam = this.knex.select("matches.id", "matchday", "name", "badge")
             .from(TEAMS).join(MATCHES, "home_team_id", "teams.id")
